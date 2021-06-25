@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/Res-System.iml" filepath="$PROJECT_DIR$/Res-System.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/Res-System-GUI.iml" filepath="$PROJECT_DIR$/Res-System-GUI.iml" />
+>>>>>>> b65ccd1 (new GUI version of ResSystem)
     </modules>
   </component>
 </project>

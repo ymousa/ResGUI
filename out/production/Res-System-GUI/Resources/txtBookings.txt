@@ -1,0 +1,4 @@
+1;Thomas;200;2021-06-25T14:00;es;4;das
+2;Thomas;200;2021-06-25T14:00;es;4;das
+3;Youhanna;4;2021-06-11T13:00;dsad;34;asdad
+4;Youhanna;dsadasdasd;2021-06-01T13:00;dsad;3;asdada
