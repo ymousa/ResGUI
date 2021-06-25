@@ -24,7 +24,6 @@ public class Constans {
 
 
     public static HashMap<String, User> hmUser= new HashMap<String, User>();
-    public static HashMap<String, Booking> hmBooking= new HashMap<String, Booking>();
 
 
 
