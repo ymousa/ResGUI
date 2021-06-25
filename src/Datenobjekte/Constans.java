@@ -17,6 +17,7 @@ public class Constans {
 
     public static List<Booking> lsBooking= new ArrayList<Booking>();
     public static List<Booking> lsMyBooking= new ArrayList<Booking>();
+    public static List<Booking> lsMyBooking1= new ArrayList<Booking>();
 
     public static BufferedReader br;
     public static BufferedWriter bw;
