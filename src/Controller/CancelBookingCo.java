@@ -48,7 +48,7 @@ public class CancelBookingCo implements Initializable {
         wtiteFileBookings();
 
         selectedBooking.setText("Die Reservierung wurde erfolgreich storniert!");
-        System.out.println("cancel Booking succsess");
+        System.out.println("cancel Booking succsess");// system.out entfernen
         choiceBox= emptyBox;                                                        //choiceBox get empty
 
         /*lsMyBooking.clear();                                                        //all list get empty

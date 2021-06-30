@@ -8,7 +8,7 @@ import Datenobjekte.*;
 
 public class BookingTools extends Constans {
 
-    public static void showMyBooking(User searchingUser) {
+    public static void showMyBooking(User searchingUser) {   // gehört in die userklasse
         lsMyBooking= new ArrayList<Booking>();
         for (Booking booking : lsBooking) {
             if (booking.getsUser().equals(searchingUser.getsName())) {

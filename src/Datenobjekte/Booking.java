@@ -137,6 +137,8 @@ public class Booking {
     }
 
     public LocalDateTime getDateOfCheckin(){return checkin;}
-
+/*
+* lsBooking hierher verschieben funktionen für den zugriff
+* */
 
 }

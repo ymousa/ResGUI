@@ -12,18 +12,18 @@ public class Constans {
     public static File txtUsers = new File("src/Resources/txtUsers.txt");
     public static File txtBookings = new File("src/Resources/txtBookings.txt");
 
-    public static User myUser= null;
-    public static Booking myBooking= null;
+    public static User myUser= null;  /*activeUser besser*/
+    public static Booking myBooking= null; /* in den User ziehen nicht static*/
 
-    public static List<Booking> lsBooking= new ArrayList<Booking>();
-    public static List<Booking> lsMyBooking= new ArrayList<Booking>();
+    public static List<Booking> lsBooking= new ArrayList<Booking>(); /* in Booking ziehen nicht static*/
+    public static List<Booking> lsMyBooking= new ArrayList<Booking>(); /* in den User ziehen nicht static*/
 
-    public static BufferedReader br;
-    public static BufferedWriter bw;
-    public static InputStreamReader is;
+    public static BufferedReader br;  /* warum hier einführen ?*/
+    public static BufferedWriter bw; /* warum hier einführen ?*/
+    public static InputStreamReader is; /* warum hier einführen ?*/
 
 
-    public static HashMap<String, User> hmUser= new HashMap<String, User>();
+    public static HashMap<String, User> hmUser= new HashMap<String, User>(); /*Klasse anlegen die map dort hinzufügen und hier ein static objekt dieser klasse anlegen*/
 
 
 

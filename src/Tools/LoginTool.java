@@ -14,11 +14,11 @@ public class LoginTool extends Constans{
             User tempUser= hmUser.get(username);
             if(tempUser.getsUsername().equals(username) &&
                     tempUser.getsPass().equals(password)){
-                System.out.println("Success!");
+                System.out.println("Success!");// system.out entfernen
                 return tempUser;
             }
         }
-        System.out.println("Please try again..");
+        System.out.println("Please try again..");// system.out entfernen
         return null;
     }
 
@@ -26,6 +26,6 @@ public class LoginTool extends Constans{
 
         User newUser = new User(name, username, password);
         hmUser.put(username, newUser);
-        System.out.println("sing in a new Account: succsess!");
+        System.out.println("sing in a new Account: succsess!");// system.out entfernen
     }
 }

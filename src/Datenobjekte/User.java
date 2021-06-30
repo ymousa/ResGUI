@@ -48,5 +48,7 @@ public class User {
         this.sPass = sPass;
     }
 
-
+/*
+* funktionen für myBooking und lsmyBooking sowie memeber hinzufügen
+* */
 }

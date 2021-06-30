@@ -1,7 +1,0 @@
-servus;000;000
-1;1;1
-Thomas;thomas.telekom;123
-ttt;ttt;ttt
-yostina;yo.mo;123
-xoxo;xoxo;xoxo
-Youhanna;y.m;000
