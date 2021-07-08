@@ -7,16 +7,15 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
 public class Constans {
-    public static File txtUsers = new File("src/Resources/txtUsers.txt");
-    public static File txtBookings = new File("src/Resources/txtBookings.txt");
+    public static File txtUsers = new File("Resources/txtUsers.txt");
+    public static File txtBookings = new File("Resources/txtBookings.txt");
 
-    public static User myUser= null;  /*activeUser besser*/
-    public static Booking myBooking= null; /* in den User ziehen nicht static*/
+    public static User myUser = null;  /*activeUser besser*/
+    public static Booking myBooking = null; /* in den User ziehen nicht static*/
 
-    public static List<Booking> lsBooking= new ArrayList<Booking>(); /* in Booking ziehen nicht static*/
-    public static List<Booking> lsMyBooking= new ArrayList<Booking>(); /* in den User ziehen nicht static*/
+    public static List<Booking> lsBooking = new ArrayList<Booking>(); /* in Booking ziehen nicht static*/
+    public static List<Booking> lsMyBooking = new ArrayList<Booking>(); /* in den User ziehen nicht static*/
 
     public static BufferedReader br;  /* warum hier einführen ?*/
     public static BufferedWriter bw; /* warum hier einführen ?*/

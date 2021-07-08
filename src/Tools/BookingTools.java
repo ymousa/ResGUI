@@ -1,15 +1,16 @@
 package Tools;
 
+import Datenobjekte.Booking;
+import Datenobjekte.Constans;
+import Datenobjekte.User;
+
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-
-import Datenobjekte.*;
 
 public class BookingTools extends Constans {
 
-    public static void showMyBooking(User searchingUser) {   // gehört in die userklasse
-        lsMyBooking= new ArrayList<Booking>();
+    public static void showMyBooking(User searchingUser) {
+        lsMyBooking = new ArrayList<Booking>();
         for (Booking booking : lsBooking) {
             if (booking.getsUser().equals(searchingUser.getsName())) {
                 lsMyBooking.add(booking);

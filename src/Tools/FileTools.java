@@ -1,7 +1,9 @@
 package Tools;
 
 
-import Datenobjekte.*;
+import Datenobjekte.Booking;
+import Datenobjekte.Constans;
+import Datenobjekte.User;
 
 import java.io.*;
 
@@ -74,7 +76,7 @@ public class FileTools extends Constans {
 
     public static void printBookings() throws IOException {
         for(int i=0; i<lsBooking.size(); i++){
-            System.out.println(lsBooking.get(i));// system.out entfernen
+            System.out.println(lsBooking.get(i));
             i++;
         }
     }
@@ -82,7 +84,7 @@ public class FileTools extends Constans {
     public static void printUsers() throws IOException {
 
         hmUser.forEach((key, User) -> {
-            System.out.println(User.toString());// system.out entfernen
+            System.out.println(User.toString());
         });
     }
 }

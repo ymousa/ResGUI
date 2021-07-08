@@ -2,16 +2,19 @@ package Datenobjekte;
 
 
 public class User {
-    private String sName="";
-    private String sUsername="";
-    private String sPass="";
+    private String sName = "";
+    private String sUsername = "";
+    private String sPass = "";
+    public Booking myBooking = null;
 
-    public User(){}
 
-    public User(String sName, String sUsername, String sPass){
-        this.sName= sName;
-        this.sUsername= sUsername;
-        this.sPass= sPass;
+    public User() {
+    }
+
+    public User(String sName, String sUsername, String sPass) {
+        this.sName = sName;
+        this.sUsername = sUsername;
+        this.sPass = sPass;
     }
 
 
@@ -23,6 +26,7 @@ public class User {
                 ", sPass='" + sPass + '\''
                 ;
     }
+
 
     public String getsName() {
         return sName;
