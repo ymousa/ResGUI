@@ -10,27 +10,36 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class MainCo {
+public class MainCo extends FileTools {
 
+    public MainCo() throws IOException {
+        firstMethod();
+    }
 
-    public MainCo(ActionEvent event, String fxml) throws IOException {
-        switchScene(event,fxml);
+    public MainCo(String logout) throws IOException {
+        wtiteFileUsers();
+        wtiteFileBookings();
     }
 
 
-    public static void firstMethod() throws IOException {
-         FileTools.readFileUsers();
-         FileTools.wtiteFileUsers();
-         FileTools.readFileBookings();
-         FileTools.wtiteFileBookings();
-     }
+    public MainCo(ActionEvent event, String fxml) throws IOException {
+        switchScene(event, fxml);
+    }
 
-     public  void switchScene(ActionEvent event, String fxml) throws IOException {
-         Parent root= FXMLLoader.load(getClass().getResource(fxml));
-         Scene scene = new Scene(root);
-         Stage window = (Stage) ((Node)event.getSource()).getScene().getWindow();
-         window.setScene(scene);
-         window.setTitle("Anmeldung");
-         window.show();
-     }
+
+    public void firstMethod() throws IOException {
+        readFileUsers();
+        wtiteFileUsers();
+        readFileBookings();
+        wtiteFileBookings();
+    }
+
+    public void switchScene(ActionEvent event, String fxml) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource(fxml));
+        Scene scene = new Scene(root);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(scene);
+        window.setTitle("Anmeldung");
+        window.show();
+    }
 }

@@ -3,15 +3,12 @@ package Controller;
 import Datenobjekte.Booking;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-import static Datenobjekte.Constans.*;
-import static Tools.BookingTools.showMyBooking;
+import static Datenobjekte.Booking.getLsBooking;
+
 
 public class ShowBookingCo {
 
@@ -59,13 +56,13 @@ public class ShowBookingCo {
 
     void setTable(){
         tableProperties();
-        for(Booking booking: lsBooking){
-            nr.appendText(booking.getiBookingNr()+"\n");
-            name.appendText(booking.getsUser()+"\n");
-            datum.appendText(booking.getDateOfCheckin()+"\n");
-            veranstaltung.appendText(booking.getsBookingName()+"\n");
-            dauer.appendText(booking.getiDuration()+"\n");
-            notizen.appendText(booking.getsNots()+"\n");
+        for (Booking booking : getLsBooking()) {
+            nr.appendText(booking.getiBookingNr() + "\n");
+            name.appendText(booking.getsUser() + "\n");
+            datum.appendText(booking.getDateOfCheckin() + "\n");
+            veranstaltung.appendText(booking.getsBookingName() + "\n");
+            dauer.appendText(booking.getiDuration() + "\n");
+            notizen.appendText(booking.getsNots() + "\n");
         }
     }                               // st text in table
 

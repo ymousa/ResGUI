@@ -1,6 +1,5 @@
 package Controller;
 
-import Tools.FileTools;
 import Tools.LoginTool;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +10,6 @@ import java.io.IOException;
 
 
 public class SignInCo {
-
 
 
     @FXML
@@ -30,9 +28,9 @@ public class SignInCo {
     void SignInClick(ActionEvent event) throws IOException {
         LoginTool.newAccount(vorname.getText(), username.getText(), newpass.getText());
         System.out.println("add new Account succsess"); // system.out entfernen
-        FileTools.wtiteFileUsers();
-        FileTools.readFileUsers();
-        MainCo mainC= new MainCo(event ,"../FXML/LogIn.fxml");
+//        FileTools.wtiteFileUsers();
+//        FileTools.readFileUsers();
+        MainCo mainC = new MainCo(event, "../FXML/LogIn.fxml");
     }
 
     @FXML

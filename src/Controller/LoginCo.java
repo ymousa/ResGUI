@@ -1,13 +1,12 @@
 package Controller;
 
+import Datenobjekte.Constans;
 import Tools.LoginTool;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import Datenobjekte.*;
 
 import java.io.IOException;
 
@@ -25,14 +24,15 @@ public class LoginCo extends Constans{
 
     @FXML
     void  LogInClick(ActionEvent event) throws IOException {
+        MainCo mc0 = new MainCo("logout");
 
-        String sUsername= username.getText().toString();
-        String sPassword= password.getText().toString();
-        myUser= LoginTool.verify(sUsername,sPassword);
-        if(myUser!=null){
+        String sUsername = username.getText().toString();
+        String sPassword = password.getText().toString();
+        activeUser = LoginTool.verify(sUsername, sPassword);
+        if (activeUser != null) {
             loginMessage.setText("Login succsess!");
-            MainCo mainC= new MainCo(event ,"../FXML/showBooking.fxml");
-        }else{
+            MainCo mainC = new MainCo(event, "../FXML/showBooking.fxml");
+        } else {
             loginMessage.setText("Please try again...");
         }
     }

@@ -1,19 +1,20 @@
 package Tools;
 
-import Datenobjekte.Constans;
 import Datenobjekte.User;
 
 import java.io.IOException;
 
-public class LoginTool extends Constans{
+public class LoginTool extends FileTools {
 
 
+    public LoginTool() throws IOException {
+    }
 
-    public static User verify(String username, String password){
-        if(hmUser.containsKey(username)){
-            User tempUser= hmUser.get(username);
-            if(tempUser.getsUsername().equals(username) &&
-                    tempUser.getsPass().equals(password)){
+    public static User verify(String username, String password) {
+        if (hmUser.containsKey(username)) {
+            User tempUser = hmUser.get(username);
+            if (tempUser.getsUsername().equals(username) &&
+                    tempUser.getsPass().equals(password)) {
                 System.out.println("Success!");
                 return tempUser;
             }

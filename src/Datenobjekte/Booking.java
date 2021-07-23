@@ -4,19 +4,20 @@ package Datenobjekte;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class Booking {
-    private int iBookingNr=0;
+    private static ArrayList<Booking> lsBooking;
+    private int iBookingNr = 0;
     private String sUser ="";
     private String sRoomNr="";
     private LocalDateTime checkin;
     private String sBookingName="";
     private int iDuration=0;
     private String sNots="";
-    //private Calendar cl;
     private DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
 
 
@@ -65,18 +66,25 @@ public class Booking {
                 ", Datum: " + checkin +
                 ", Veran.: " + sBookingName +
                 ", Dauer: " + iDuration +
-                ", Notizen: " + sNots ;
+                ", Notizen: " + sNots;
+    }
+
+    public void setLsBooking(ArrayList<Booking> newList) {
+        lsBooking = newList;
+    }
+
+    public static ArrayList<Booking> getLsBooking() {
+        return lsBooking;
     }
 
 
-
-    public LocalDateTime getDateOfCheckin(LocalDate lDate, String sTime){               // for
-        String sDateTime= lDate.toString()+"T"+sTime;
+    public LocalDateTime getDateOfCheckin(LocalDate lDate, String sTime) {               // for
+        String sDateTime = lDate.toString() + "T" + sTime;
         LocalDateTime parsedDateTime = LocalDateTime.parse(sDateTime, formatter);
         return parsedDateTime;
     }
 
-    public LocalDateTime getDateOfCheckin(String sDateTime){
+    public LocalDateTime getDateOfCheckin(String sDateTime) {
         LocalDateTime parsedDateTime = LocalDateTime.parse(sDateTime, formatter);
         return parsedDateTime;
     }
@@ -137,7 +145,9 @@ public class Booking {
     }
 
     public LocalDateTime getDateOfCheckin(){return checkin;}
-/*
+
+
+    /*
 * lsBooking hierher verschieben funktionen für den zugriff
 * */
 

@@ -2,55 +2,64 @@ package Tools;
 
 
 import Datenobjekte.Booking;
-import Datenobjekte.Constans;
 import Datenobjekte.User;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 
 
-public class FileTools extends Constans {
+public class FileTools extends User {
+    public File txtUsers = new File("Resources/txtUsers.txt");
+    public File txtBookings = new File("Resources/txtBookings.txt");
+    public static HashMap<String, User> hmUser = new HashMap<String, User>();
+    public BufferedReader br;
+    public BufferedWriter bw;
 
     public FileTools() throws IOException {
         readFileUsers();
         readFileBookings();
     }
 
-    public static void readFileBookings()throws IOException {
-        br = new BufferedReader(new FileReader(Constans.txtBookings));
+    public void readFileBookings() throws IOException {
+        br = new BufferedReader(new FileReader(txtBookings));
+        ArrayList<Booking> allBookings = new ArrayList<Booking>();
         String sLine = null;
-        while((sLine = br.readLine()) != null ){      //data von txtBookings auslesen und in der hmBooking speichern
+        while ((sLine = br.readLine()) != null) {      //data von txtBookings auslesen und in der hmBooking speichern
             String[] sBookingData = sLine.split(";");
-            lsBooking.add(new Booking(sBookingData[0], sBookingData[1],
+            allBookings.add(new Booking(sBookingData[0], sBookingData[1],
                     sBookingData[2], sBookingData[3],
                     sBookingData[4], sBookingData[5],
                     sBookingData[6]));
         }
         br.close();
         br.close();
+
+        setLsBooking(allBookings);
     }
 
-    public static void readFileUsers()throws IOException{
+    public void readFileUsers() throws IOException {
         br = new BufferedReader(new FileReader(txtUsers));
         String sLine = null;
-        while((sLine = br.readLine()) != null ){      //data von txtUsers.txt auslesen und in der Liste User speichern
+        while ((sLine = br.readLine()) != null) {      //data von txtUsers.txt auslesen und in der Liste User speichern
             String[] sUserData = sLine.split(";");
-            hmUser.put(sUserData[1],new User(sUserData[0], sUserData[1], sUserData[2]));
+            hmUser.put(sUserData[1], new User(sUserData[0], sUserData[1], sUserData[2]));
         }
         br.close();
         br.close();
     }
 
-    public static void wtiteFileBookings()throws IOException{
-        FileWriter fw= new FileWriter(txtBookings, false);
-        bw= new BufferedWriter(fw);
-        String sep= ";";
-        int i=0;
-        for (Booking booking:lsBooking){
+    public void wtiteFileBookings() throws IOException {
+        FileWriter fw = new FileWriter(txtBookings, false);
+        bw = new BufferedWriter(fw);
+        String sep = ";";
+        int i = 0;
+        for (Booking booking : getLsBooking()) {
             i++;
-            String outPutText= i +sep+ booking.getsUser() +
-                    sep+ booking.getsRoomNr() +sep+ booking.getDateOfCheckin() +
-                    sep+ booking.getsBookingName() +
-                    sep+ booking.getiDuration() +sep+ booking.getsNots();
+            String outPutText = i + sep + booking.getsUser() +
+                    sep + booking.getsRoomNr() + sep + booking.getDateOfCheckin() +
+                    sep + booking.getsBookingName() +
+                    sep + booking.getiDuration() + sep + booking.getsNots();
             bw.write(outPutText);
             bw.write("\n");
         }
@@ -59,7 +68,7 @@ public class FileTools extends Constans {
 
     }
 
-    public static void wtiteFileUsers() throws IOException {
+    public void wtiteFileUsers() throws IOException {
         FileWriter fw = new FileWriter(txtUsers, false);
         bw = new BufferedWriter(fw);
         String sep = ";";
@@ -74,7 +83,7 @@ public class FileTools extends Constans {
 
     }
 
-    public static void printBookings() throws IOException {
+   /* public static void printBookings() throws IOException {
         for(int i=0; i<lsBooking.size(); i++){
             System.out.println(lsBooking.get(i));
             i++;
@@ -86,5 +95,5 @@ public class FileTools extends Constans {
         hmUser.forEach((key, User) -> {
             System.out.println(User.toString());
         });
-    }
+    }*/
 }

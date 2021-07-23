@@ -12,12 +12,12 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        MainCo.firstMethod();
+        MainCo mC = new MainCo();
         Parent root = FXMLLoader.load(getClass().getResource("FXML/Login.fxml"));
         primaryStage.setTitle("ReservierungsSystem");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
-
+        mC = new MainCo();
     }
 
 

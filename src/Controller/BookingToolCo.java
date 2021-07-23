@@ -1,16 +1,16 @@
 package Controller;
 
 import Datenobjekte.Booking;
-import Tools.FileTools;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+
 import java.io.IOException;
 import java.time.LocalDate;
 
+import static Datenobjekte.Booking.getLsBooking;
 
-import static Tools.BookingTools.getLastBooking;
 
 public class BookingToolCo extends LoginCo {
 
@@ -43,18 +43,23 @@ public class BookingToolCo extends LoginCo {
         notizen.clear();
     }
 
-    LocalDate getDateFromDatePicker (){
+    LocalDate getDateFromDatePicker() {
         return datum.getValue();
+    }
+
+    public int getLastBooking() {
+        int n = getLsBooking().size() - 1;
+        return getLsBooking().get(n).getiBookingNr();
     }
 
     @FXML
     void bookClick() throws IOException {
-        String nrR= String.valueOf(getLastBooking()+1);
-        Booking newBooking = new Booking(nrR, myUser.getsName(), raumNr.getText(), getDateFromDatePicker(),
+        String nrR = String.valueOf(getLastBooking() + 1);
+        Booking newBooking = new Booking(nrR, activeUser.getsName(), raumNr.getText(), getDateFromDatePicker(),
                 veranstaltung.getText(), uhrzeit.getText(), dauer.getText(), notizen.getText());
-        if(uhrzeit.getText()!=null){
-            lsBooking.add(newBooking);
-            FileTools.wtiteFileBookings();
+        if (uhrzeit.getText() != null) {
+            getLsBooking().add(newBooking);
+            //FileTools.wtiteFileBookings();
             System.out.println("add new Booking success!");// system.out entfernen
         }
         clearAllTextfield();

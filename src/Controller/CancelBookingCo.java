@@ -1,7 +1,6 @@
 package Controller;
 
 import Datenobjekte.Booking;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -12,9 +11,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import static Datenobjekte.Constans.*;
-import static Tools.BookingTools.*;
-import static Tools.FileTools.wtiteFileBookings;
+import static Datenobjekte.Constans.activeUser;
 
 
 public class CancelBookingCo implements Initializable {
@@ -29,27 +26,27 @@ public class CancelBookingCo implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        showMyBooking(myUser);
-        choiceBox.getItems().addAll(lsMyBooking);
+        activeUser.showMyBooking(activeUser);
+        choiceBox.getItems().addAll(activeUser.lsMyBooking);
         choiceBox.setOnAction(this::getBooking);
     }
 
 
-    public void getBooking(ActionEvent event){                      //for choicBox:  myBooking get valueOf list: lsMyBooking
-        myBooking= choiceBox.getValue();
-        selectedBooking.setText(myBooking.toString());
+    public void getBooking(ActionEvent event) {                      //for choicBox:  myBooking get valueOf list: lsMyBooking
+        activeUser.myBooking = choiceBox.getValue();
+        selectedBooking.setText(activeUser.myBooking.toString());
 
     }
 
 
     @FXML
     void cancelClick(ActionEvent event) throws IOException {
-        deleteBooking(myUser, myBooking);
-        wtiteFileBookings();
+        activeUser.deleteBooking(activeUser, activeUser.getMyBooking());
+        //wtiteFileBookings();
 
         selectedBooking.setText("Die Reservierung wurde erfolgreich storniert!");
         System.out.println("cancel Booking succsess");// system.out entfernen
-        choiceBox= emptyBox;                                                        //choiceBox get empty
+        choiceBox = emptyBox;                                                        //choiceBox get empty
 
         /*lsMyBooking.clear();                                                        //all list get empty
         lsBooking.clear();
